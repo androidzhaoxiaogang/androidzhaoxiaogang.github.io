@@ -4,12 +4,12 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Hexo</title>
+  <title>Category: design pattern | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/categories/design-pattern/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description">
 <meta name="twitter:card" content="summary">
@@ -206,190 +206,56 @@
 
       <div class="body-wrap">
   
-    <article id="post-对于IT技术人员很重要的3句话" class="article article-type-post" itemscope itemprop="blogPost">
   
-    <div class="article-meta">
-      <a href="/2016/01/17/对于IT技术人员很重要的3句话/" class="article-date">
-  	<time datetime="2016-01-17T05:19:00.000Z" itemprop="datePublished">2016-01-17</time>
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2015" class="archive-year">2015</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2015/11/21/浅谈什么是God-object/" class="archive-article-date">
+  	<time datetime="2015-11-21T07:31:21.000Z" itemprop="datePublished">11月 21</time>
 </a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
+        </div>
+    	 
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/17/对于IT技术人员很重要的3句话/">对于IT技术人员很重要的3句话</a>
+      <a class="archive-article-title" href="/2015/11/21/浅谈什么是God-object/">浅谈什么是God object</a>
     </h1>
   
 
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>1.A whole-life leaner is perfered;</p>
-<p>2.You should be open-mind;</p>
-<p>3.You can be a dick or asshole, but you should be make sense;</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/心路历程/">心路历程</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-polling-or-push" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/11/22/polling-or-push/" class="article-date">
-  	<time datetime="2015-11-22T14:18:36.000Z" itemprop="datePublished">2015-11-22</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/22/polling-or-push/">polling or push</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>现在移动互联网终端应用绝大多数都用了上推送（push）或者更好听的名字叫着云推送。该技术基本上是现在互联网产品的必点套餐，当然主要原因就是能够大幅提升用户的体验。</p>
-<p>在绝大多数情况下，比如新闻、咨询、实况、商务、社交等等我们都采用了服务器主动往肯定推送的方式。但是，如果我们从后端复杂度，硬件和资源的消耗，以及自身业务的需要来考虑的话，有些情况下使用polling时一种更好的解决方案。</p>
-<p>polling又叫着轮训，通常是某一端主动向另外一端循环发起的反复请求。由于请求是反复的，所以也必须合理科学使用才能节省资源和电量。但是，在请求程度不频繁的业务和上，比如一天只重复十几次或者每隔一刻钟或者半个小时的情况，使用polling会更加合理，对客户度电量的消耗和对服务器资源的消耗都相对较小。</p>
-<p>最后，当用户量很大的应用在使用polling也必须谨慎，特别是那种每天定点执行的任务，比如每天的9点、12点、14点、19点执行，其它时间不执行。这种问题的关键就在于当用户量大了如果用户同时向服务器做polling，此时的服务器压力或许活比push维护一个长连接面临的压力更大，所以我们需要将用户进行分组推送。比如，根据IMEI的最后两位，或者是MAC地址等等方式，平均分布到一个时间段上面去，可以根据请求量来调整这个时间的粒度。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/network/">network</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-浅谈什么是God-object" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/11/21/浅谈什么是God-object/" class="article-date">
-  	<time datetime="2015-11-21T07:31:21.000Z" itemprop="datePublished">2015-11-21</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/21/浅谈什么是God-object/">浅谈什么是God object</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在面向对象的程序编程里面，god object就是指那种知道得太多而且干了太多事情的对象。god object就是anti-pattern的一个最好的例子。</p>
-<p>我们通常在编程的时候，习惯将大的和复杂的事情分割为多个小问题的方法来解决，并且为每一个问题提供一种解决方案。当所有小的问题被解决了，那么大问题当然也就迎刃而解了。因此，一个对象应该是一个很小且只关注与自身的一个对象。同样地，一个对象需要解决的一系列的问题是和自身相关的问题。</p>
-<p>相反地，一个使用god object的程序是不遵守这一点的。很多情况下这种程序的大量功能会被编写到一个对象里面，在这个对象里面维护了这个程序的大量信息，并且提供了大量的方法来操作这些数据。由于这个对象保存了大量的数据所以需要更多的方法，所以它的作用在在整个程序里面就像上帝一样变得众所周知和众所围绕。程序的其它对象不是直接在他们之间直接进行通信，而是它们的大量信息和交互需要依赖于这个所谓的god object来进行。由于这个上帝对象的引用被其它大量对象所调用，代码的维护比分块设计的方式维护起来困难得多。</p>
-<p>god object要么是就是在面向过程的语言中错误使用类似面向对象而导致，或者是存储状态信息使用了太多的全局变量。所以，结论就是我们要尽量避免设计出god object这种对象，而是采用模块化和接口化设计。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/anti-pattern/">anti-pattern</a></li></ul>
 	</div>
 
-      
+          
 	<div class="article-category tagcloud">
 	<a class="article-category-link" href="/categories/design-pattern/">design pattern</a>
 	</div>
 
 
-      
-      <div class="clearfix"></div>
-    </div>
-    
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
-  
 </article>
-
-
-
-
-
-
-
-
-
   
   
+    </div></section>
+  
+
+    
+
 </div>
       <footer id="footer">
   <div class="outer">
@@ -413,11 +279,11 @@
 		fancybox: true,
 		mathjax: true,
 		animate: true,
-		isHome: true,
+		isHome: false,
 		isPost: false,
 		isArchive: false,
 		isTag: false,
-		isCategory: false,
+		isCategory: true,
 		open_in_new: false
 	}
 </script>
