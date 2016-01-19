@@ -8,20 +8,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="制作Andriod程序的数字签名需要使用JDK，先确认本机是否安装了JDK，在JDK目录下有一个KEYTOOL工具，这个就是制作数字签名使用到的工具；
 
-2.打开KEYTOOL，在运行中输入cmd,使用cd命令将路径切换至keytool所在目录，然后做如下操作：输入命令：keytool -genkey -v -keystore kzoncj.keystore -alias kzoncj -keya">
+2.打开KEYTOOL，在运行中输入cmd,使用cd命令将路径切换至keytool所在目录，然后做如下操作：输入命令：
+
+keytool -genkey -v -keystore kzoncj.keystore -alias kzoncj -ke">
 <meta property="og:type" content="article">
 <meta property="og:title" content="android证书制作">
 <meta property="og:url" content="http://yoursite.com/2010/09/03/android证书制作/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="制作Andriod程序的数字签名需要使用JDK，先确认本机是否安装了JDK，在JDK目录下有一个KEYTOOL工具，这个就是制作数字签名使用到的工具；
 
-2.打开KEYTOOL，在运行中输入cmd,使用cd命令将路径切换至keytool所在目录，然后做如下操作：输入命令：keytool -genkey -v -keystore kzoncj.keystore -alias kzoncj -keya">
-<meta property="og:updated_time" content="2016-01-19T08:35:23.000Z">
+2.打开KEYTOOL，在运行中输入cmd,使用cd命令将路径切换至keytool所在目录，然后做如下操作：输入命令：
+
+keytool -genkey -v -keystore kzoncj.keystore -alias kzoncj -ke">
+<meta property="og:updated_time" content="2016-01-19T08:38:06.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="android证书制作">
 <meta name="twitter:description" content="制作Andriod程序的数字签名需要使用JDK，先确认本机是否安装了JDK，在JDK目录下有一个KEYTOOL工具，这个就是制作数字签名使用到的工具；
 
-2.打开KEYTOOL，在运行中输入cmd,使用cd命令将路径切换至keytool所在目录，然后做如下操作：输入命令：keytool -genkey -v -keystore kzoncj.keystore -alias kzoncj -keya">
+2.打开KEYTOOL，在运行中输入cmd,使用cd命令将路径切换至keytool所在目录，然后做如下操作：输入命令：
+
+keytool -genkey -v -keystore kzoncj.keystore -alias kzoncj -ke">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -251,7 +257,10 @@
         <ol>
 <li>制作Andriod程序的数字签名需要使用JDK，先确认本机是否安装了JDK，在JDK目录下有一个KEYTOOL工具，这个就是制作数字签名使用到的工具；</li>
 </ol>
-<p>2.打开KEYTOOL，在运行中输入cmd,使用cd命令将路径切换至keytool所在目录，然后做如下操作：<br>输入命令：keytool -genkey -v -keystore kzoncj.keystore -alias kzoncj -keyalg RSA -validity 1000</p>
+<p>2.打开KEYTOOL，在运行中输入cmd,使用cd命令将路径切换至keytool所在目录，然后做如下操作：<br>输入命令：</p>
+<blockquote>
+<p>keytool -genkey -v -keystore kzoncj.keystore -alias kzoncj -keyalg RSA -validity 1000</p>
+</blockquote>
 <p>3.说明：-keystore kzoncj.keystore 表示生成的证书，可以加上路径（默认在用户主目录下）；-alias kzoncj 表示证书的别名是kzoncj； -keyalg RSA 表示采用的RSA算法；-validity 1000表示证书的有效期是1000天。<br>完成上述操作在本地会生成一个扩展名为.keystore（本实例就是kzoncj.keystore）的文件，这个就是数字签名文件。<br>顶</p>
 
       
