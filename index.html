@@ -206,6 +206,70 @@
 
       <div class="body-wrap">
   
+    <article id="post-了解微服务" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/01/19/了解微服务/" class="article-date">
+  	<time datetime="2016-01-19T06:06:11.000Z" itemprop="datePublished">2016-01-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/19/了解微服务/">了解微服务</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#背景<br>  有因必有果，有果必有因，很多同学在谈论微服务的时候只是结果去分析结果，而没有从事情的问题出发点去追根溯源。这就像谷歌内部大量开始使用go语言，而python没有像以前那么重要的原因一样。当工程师在开发一个极为复杂的项目的时候遇到了硬件、软件工程、项目管理等等方面的原因，他们急于要摆脱这种现状。因为，项目太复杂，业务和服务就无法聚焦，一旦平台出现雪崩，很难分析出问题所在，这个时候我们只能用一句口水话来形容“眉毛胡子一把抓”，此时解决问题和分析问题的代价太大。此外，按照风险分担的原则，也需要我们把业务和风险的粒度尽量减小，去规避不必要的风险。也许，按照传统的做法，我们最终把业务线上遇到的问题fix了，但是经常这种情况是不是所有部门都要参与，需要大量投入大量的人的精力，结果最后发现问题和百分之九十的人无关，但是他们又要参与进来，说不定是几天几夜，所以从项目管理上也是对资源的一种浪费。<br>  总之，方方面面的原因都很多，但是我想说的是其它的问题算是问题，但是上面的问题更迫切，需要我们马上解决，所以这个时候微服务就产生了，正所谓时势造英雄嘛。</p>
+<p>#定义</p>
+<p>  微服务是指开发一个小型的但有业务功能的服务，每个服务都有自己的处理和轻量通讯机制，可以部署在单个或多个服务器上。<br>  微服务也指一种种松耦合的、有一定的有界上下文的面向服务架构。也就是说，如果每个服务都要同时修改，那么它们就不是微服务，因为它们紧耦合在一起。 </p>
+<p>#优点</p>
+<p>每个微服务都很小，这样能聚焦一个指定的业务功能或业务需求。<br>微服务能够被小团队单独开发，这个小团队是2到5人的开发人员组成。<br>微服务是松耦合的，是有功能意义的服务，无论是在开发阶段或部署阶段都是独立的。<br>微服务能使用不同的语言开发。<br>微服务允许容易且灵活的方式集成自动部署，通过持续集成工具，如Jenkins, Hudson, bamboo 。<br>一个团队的新成员能够更快投入生产。<br>微服务易于被一个开发人员理解，修改和维护，这样小团队能够更关注自己的工作成果。无需通过合作才能体现价值。<br>微服务允许你利用融合最新技术。<br>微服务只是业务逻辑的代码，不会和HTML,CSS 或其他界面组件混合。<br>微服务能够即时被要求扩展。<br>微服务能部署中低端配置的服务器上。<br>易于和第三方集成。<br>每个微服务都有自己的存储能力，可以有自己的数据库。也可以有统一数据库。</p>
+<p>#缺点</p>
+<p>微服务架构可能带来过多的操作。<br>需要DevOps技巧 ［DevOps］（<a href="http://en.wikipedia.org/wiki/DevOps）" target="_blank" rel="external">http://en.wikipedia.org/wiki/DevOps）</a> 。<br>可能双倍的努力。<br>分布式系统可能复杂难以管理。<br>因为分布部署跟踪问题难。<br>当服务数量增加，管理复杂性增加。</p>
+<p>#适用场景</p>
+<p>桌面、web、移动、智能电视、可穿戴设备等等其它智能设备。
+　　</p>
+<p>#解耦</p>
+<p>通过使用HTTP/REST，数据格式使用JSON或Protobuf等协议。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-对于IT技术人员很重要的3句话" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
