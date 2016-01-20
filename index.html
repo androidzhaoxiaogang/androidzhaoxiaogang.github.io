@@ -118,7 +118,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/android/" style="font-size: 10px;">android</a> <a href="/tags/android-ui/" style="font-size: 10px;">android ui</a> <a href="/tags/anti-pattern/" style="font-size: 10px;">anti-pattern</a> <a href="/tags/network/" style="font-size: 10px;">network</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/web后端/" style="font-size: 10px;">web后端</a> <a href="/tags/并行技术/" style="font-size: 10px;">并行技术</a> <a href="/tags/微服务/" style="font-size: 10px;">微服务</a> <a href="/tags/心路历程/" style="font-size: 20px;">心路历程</a>
+						<a href="/tags/android/" style="font-size: 10px;">android</a> <a href="/tags/android-ui/" style="font-size: 10px;">android ui</a> <a href="/tags/anti-pattern/" style="font-size: 10px;">anti-pattern</a> <a href="/tags/java-中断/" style="font-size: 10px;">java, 中断</a> <a href="/tags/network/" style="font-size: 10px;">network</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/web后端/" style="font-size: 10px;">web后端</a> <a href="/tags/并行技术/" style="font-size: 10px;">并行技术</a> <a href="/tags/微服务/" style="font-size: 10px;">微服务</a> <a href="/tags/心路历程/" style="font-size: 20px;">心路历程</a>
 					</div>
 				</section>
 				
@@ -669,11 +669,11 @@
 
 
   
-    <article id="post-在tieto时的英文自我介绍" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-java中断和线程结束深入探讨" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2009/07/20/在tieto时的英文自我介绍/" class="article-date">
-  	<time datetime="2009-07-20T06:48:04.000Z" itemprop="datePublished">2009-07-20</time>
+      <a href="/2010/09/20/java中断和线程结束深入探讨/" class="article-date">
+  	<time datetime="2010-09-20T07:05:09.000Z" itemprop="datePublished">2010-09-20</time>
 </a>
     </div>
   
@@ -686,7 +686,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2009/07/20/在tieto时的英文自我介绍/">在tieto时的英文自我介绍</a>
+      <a class="article-title" href="/2010/09/20/java中断和线程结束深入探讨/">java中断和线程结束深入探讨</a>
     </h1>
   
 
@@ -695,8 +695,21 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Hey，all. My name is Andy. It is nearly one year since I joined in Tieto. I act as the software engineer. Being a member of Tieto, I tried to adapt myself to the new circumstance and the new culture. As we all known that, Tieto is a Finnish company which has five branches in the globe. Tieto Chengdu established in the last year. There is a saying that “New chance brings up new challenges”. So in my daily work I take more initiative and sometimes put a lot on the plate. In thus way,I have got more experience and enlarged my knowledge. That’s why I can take more responsibility in my future work.</p>
-<p>In my spare time, I love reading, because one will easily lag behind unless he keeps on learning. In addition, I love to play PC games, such as war craft. Also having hotpot and drinks together with friends or colleagues are my favorites.</p>
+        <p><strong> 中断: </strong><br>有软中断和硬中断之分。而硬中断多为外围设备引起而且发生多是随机的，故我们在这里只讨论java程序中的软中断，是可控的。 </p>
+<p>这里我必须要回答几个问题，然而是网上大多数文章没有回答的。 </p>
+<blockquote>
+<p>1)为什么使用中断？<br>2)何时使用中断？<br>3)中断和结束线程之间有什么关系？<br>4)中断是否就是结束线程？ </p>
+</blockquote>
+<p>1)在java中我们引入中断的目的是为了打断线程现在所处的某种状态，但是我们知道这种状态一定是阻塞状态；<br>2)上面已经说了是在线程阻塞的时候，我们想要改变它阻塞的状态，所以通常在线程sleep，wait，join的情况下我们可以使用中断；<br>3)由于中断可以捕获，通过这种方式我们可以结束线程；<br>4)中断不是结束线程，只不过发送了一个中断信号而已，线程要退出还要我们加上自己的结束线程的操作。 </p>
+<p>上面说了中断使用的情况也就是scope，那么也就说明了线程在某些情况是不可中断的，换句话说，是捕获不到中断信号的。 </p>
+<p>我们现在将中断分为两种情况：<br>可中断的阻塞和不可中断的阻塞 </p>
+<p>对于可中断的阻塞情况我们要怎么结束这样的线程呢？下面举个简单的例子; </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;   </span><br><span class="line">    <span class="keyword">while</span> (!Thread.currentThread().isInterrupted()&amp;&amp; more work to do) &#123;   </span><br><span class="line">        <span class="keyword">try</span> &#123;   </span><br><span class="line">            ...   </span><br><span class="line">            sleep(delay);   </span><br><span class="line">        &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;   </span><br><span class="line">           Thread.currentThread().interrupt();<span class="comment">//重新设置中断标示   </span></span><br><span class="line">        &#125;   </span><br><span class="line">    &#125;   </span><br><span class="line">&#125;   </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123; </span><br><span class="line">    <span class="keyword">while</span> (!Thread.currentThread().isInterrupted()&amp;&amp; more work to do) &#123; </span><br><span class="line">        <span class="keyword">try</span> &#123; </span><br><span class="line">            ... </span><br><span class="line">            sleep(delay); </span><br><span class="line">        &#125; <span class="keyword">catch</span> (InterruptedException e) &#123; </span><br><span class="line">            Thread.currentThread().interrupt();<span class="comment">//重新设置中断标示 </span></span><br><span class="line">        &#125; </span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>通过在另外一个线程或者主线程里面调用要结束或者中断线程的句柄执行interrupt（）方法，然后在该线程里面去捕获中断，从而退出run（）方法；当然上面也可以用bool值的方式，在捕获到中断后修改bool值达到退出run方法的目的。上面的例子都是用于wait，join的情况。 </p>
+<p>谈到不可中断的阻塞，由于线程阻塞不可能被中断，或者不具备被中断的条件，所以我们会考虑到一些不同的处理方式：<br>一是引入条件可以让该不可中断的线程能够被中断，比如在read的循环里面加个sleep函数，这样就可以捕获中断异常从而达到退出的目的了； </p>
+<p>二是我们还是可以引入一个valotile的bool值的方式，线程要结束时，在循环里面去修改，注意这里有一个前提是有一个循环，并且循环执行一次的时间很短；</p>
+<p>三是书上和网上将的情况，socket的处理是用关闭socket的方式也就是关闭底层资源的方式来捕获异常达到退出的目的； </p>
+<p>四也是网上和书上讲到的对被加锁的块（synchronized方法和临界区）进行中断采用ReentrantLock可以捕获中断。</p>
 
       
     </div>
@@ -705,7 +718,7 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/心路历程/">心路历程</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java-中断/">java, 中断</a></li></ul>
 	</div>
 
       
