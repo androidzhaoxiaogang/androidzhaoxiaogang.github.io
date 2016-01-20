@@ -206,11 +206,11 @@
 
       <div class="body-wrap">
   
-    <article id="post-在tieto时的英文自我介绍" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-android证书制作" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2008/08/20/在tieto时的英文自我介绍/" class="article-date">
-  	<time datetime="2008-08-20T06:48:04.000Z" itemprop="datePublished">2008-08-20</time>
+      <a href="/2008/09/03/android证书制作/" class="article-date">
+  	<time datetime="2008-09-03T08:33:03.000Z" itemprop="datePublished">2008-09-03</time>
 </a>
     </div>
   
@@ -223,7 +223,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2008/08/20/在tieto时的英文自我介绍/">在tieto时的英文自我介绍</a>
+      <a class="article-title" href="/2008/09/03/android证书制作/">android证书制作</a>
     </h1>
   
 
@@ -232,8 +232,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Hey，My name is Andy. It is nearly one year since I joined in Tieto. I act as the software engineer. Being a member of Tieto, I tried to adapt myself to the new circumstance and the new culture. As we all known that, Tieto is a Finnish company which has five branches in the globe. Tieto Chengdu established in the last year. There is a saying that “New chance brings up new challenges”. So in my daily work I take more initiative and sometimes put a lot on the plate. In thus way,I have got more experience and enlarged my knowledge. That’s why I can take more responsibility in my future work.</p>
-<p>In my spare time, I love reading, because one will easily lag behind unless he keeps on learning. In addition, I love to play PC games, such as war craft. Also having hotpot and drinks together with friends or colleagues are my favorites.</p>
+        <ol>
+<li>制作Andriod程序的数字签名需要使用JDK，先确认本机是否安装了JDK，在JDK目录下有一个KEYTOOL工具，这个就是制作数字签名使用到的工具；</li>
+</ol>
+<p>2.打开KEYTOOL，在运行中输入cmd,使用cd命令将路径切换至keytool所在目录，然后做如下操作：<br>输入命令：</p>
+<blockquote>
+<p>keytool -genkey -v -keystore kzoncj.keystore -alias kzoncj -keyalg RSA -validity 1000</p>
+</blockquote>
+<p>3.说明：-keystore kzoncj.keystore 表示生成的证书，可以加上路径（默认在用户主目录下）；-alias kzoncj 表示证书的别名是kzoncj； -keyalg RSA 表示采用的RSA算法；-validity 1000表示证书的有效期是1000天。<br>完成上述操作在本地会生成一个扩展名为.keystore（本实例就是kzoncj.keystore）的文件，这个就是数字签名文件。<br>顶</p>
 
       
     </div>
@@ -242,7 +248,7 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/心路历程/">心路历程</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li></ul>
 	</div>
 
       
