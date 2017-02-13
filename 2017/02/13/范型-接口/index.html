@@ -4,21 +4,18 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>引入并发的原因 | Hexo</title>
+  <title>范型--接口 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在这里我不想去谈论操作系统的发展史，而是想说一下操作系统发展过程中迫切引入并发的原因：
-1.资源利用率在有些时候，程序在工作的时候，必须要等待外部的某个操作结束才能进行下一步，比如在等待输入和输出的时候，而程序在等待的过程之中，是无法进行任何其它的工作的。故此，如果程序在等待的同时去执行另外的一个程序，无疑会提高程序执行的效率。小学时，华罗庚的统筹方法里面也谈到了利用率的问题，给我有相同的启示。2">
+  <meta name="description" content="范型接口-&amp;gt;生成器1.通过范型接口（类似工厂类的构造方法）；public interface Generator { T next(); }2.基本类型无法作为范型的参数类型；">
 <meta property="og:type" content="article">
-<meta property="og:title" content="引入并发的原因">
-<meta property="og:url" content="http://yoursite.com/2013/06/14/引入并发的原因/index.html">
+<meta property="og:title" content="范型--接口">
+<meta property="og:url" content="http://yoursite.com/2017/02/13/范型-接口/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="在这里我不想去谈论操作系统的发展史，而是想说一下操作系统发展过程中迫切引入并发的原因：
-1.资源利用率在有些时候，程序在工作的时候，必须要等待外部的某个操作结束才能进行下一步，比如在等待输入和输出的时候，而程序在等待的过程之中，是无法进行任何其它的工作的。故此，如果程序在等待的同时去执行另外的一个程序，无疑会提高程序执行的效率。小学时，华罗庚的统筹方法里面也谈到了利用率的问题，给我有相同的启示。2">
-<meta property="og:updated_time" content="2016-01-19T08:52:03.000Z">
+<meta property="og:description" content="范型接口-&amp;gt;生成器1.通过范型接口（类似工厂类的构造方法）；public interface Generator { T next(); }2.基本类型无法作为范型的参数类型；">
+<meta property="og:updated_time" content="2017-02-13T15:56:55.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="引入并发的原因">
-<meta name="twitter:description" content="在这里我不想去谈论操作系统的发展史，而是想说一下操作系统发展过程中迫切引入并发的原因：
-1.资源利用率在有些时候，程序在工作的时候，必须要等待外部的某个操作结束才能进行下一步，比如在等待输入和输出的时候，而程序在等待的过程之中，是无法进行任何其它的工作的。故此，如果程序在等待的同时去执行另外的一个程序，无疑会提高程序执行的效率。小学时，华罗庚的统筹方法里面也谈到了利用率的问题，给我有相同的启示。2">
+<meta name="twitter:title" content="范型--接口">
+<meta name="twitter:description" content="范型接口-&amp;gt;生成器1.通过范型接口（类似工厂类的构造方法）；public interface Generator { T next(); }2.基本类型无法作为范型的参数类型；">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -208,11 +205,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-引入并发的原因" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-范型-接口" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2013/06/14/引入并发的原因/" class="article-date">
-  	<time datetime="2013-06-14T08:49:21.000Z" itemprop="datePublished">2013-06-14</time>
+      <a href="/2017/02/13/范型-接口/" class="article-date">
+  	<time datetime="2017-02-13T15:56:10.000Z" itemprop="datePublished">2017-02-13</time>
 </a>
     </div>
   
@@ -225,7 +222,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      引入并发的原因
+      范型--接口
     </h1>
   
 
@@ -234,7 +231,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/并行技术/">并行技术</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
 	</div>
 
         
@@ -245,8 +242,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>在这里我不想去谈论操作系统的发展史，而是想说一下操作系统发展过程中迫切引入并发的原因：</p>
-<p><strong>1.资源利用率</strong><br>在有些时候，程序在工作的时候，必须要等待外部的某个操作结束才能进行下一步，比如在等待输入和输出的时候，而程序在等待的过程之中，是无法进行任何其它的工作的。故此，如果程序在等待的同时去执行另外的一个程序，无疑会提高程序执行的效率。小学时，华罗庚的统筹方法里面也谈到了利用率的问题，给我有相同的启示。<br><strong>2.公平性</strong><br>在大多数情况下，我们要求各种不同程序应当对计算机有相同的使用权。因此，必须要一种高效的算法来解决这个问题。分时操作系统就是将计算机cpu的时间进行粗粒度的分片，然后使不同程序来进行共同分享资源。<br><strong>3.便利性</strong><br>多任务的操作系统，为多程序直接的通信和交互提供了可能。程序直接的通信，使得程序的结构变得更加灵活，以往复杂的事情也可以进行拆分，解决了以前很多实际工作中的难题。</p>
+        <p>范型接口-&gt;生成器<br>1.通过范型接口（类似工厂类的构造方法）；<br>public interface Generator<t> { T next(); }<br>2.基本类型无法作为范型的参数类型；</t></p>
 
       
     </div>
@@ -256,18 +252,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2013/06/19/增强Android应用视觉效果的10个UI设计技巧/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          增强Android应用视觉效果的10个UI设计技巧
-        
-      </div>
-    </a>
   
-  
-    <a href="/2013/01/20/后端接口鉴权技术/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">后端接口鉴权技术</div>
+    <a href="/2017/02/13/范型-元组/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">范型--元组</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -302,7 +289,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="引入并发的原因" data-title="引入并发的原因" data-url="http://yoursite.com/2013/06/14/引入并发的原因/"></div>
+	<div class="ds-thread" data-thread-key="范型-接口" data-title="范型--接口" data-url="http://yoursite.com/2017/02/13/范型-接口/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

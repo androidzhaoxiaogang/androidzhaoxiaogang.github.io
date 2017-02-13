@@ -118,7 +118,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/android/" style="font-size: 10px;">android</a> <a href="/tags/android-ui/" style="font-size: 10px;">android ui</a> <a href="/tags/anti-pattern/" style="font-size: 10px;">anti-pattern</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/java-中断/" style="font-size: 10px;">java, 中断</a> <a href="/tags/network/" style="font-size: 10px;">network</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/web后端/" style="font-size: 10px;">web后端</a> <a href="/tags/并行技术/" style="font-size: 10px;">并行技术</a> <a href="/tags/微服务/" style="font-size: 10px;">微服务</a> <a href="/tags/心路历程/" style="font-size: 20px;">心路历程</a>
+						<a href="/tags/android/" style="font-size: 10px;">android</a> <a href="/tags/android-ui/" style="font-size: 10px;">android ui</a> <a href="/tags/anti-pattern/" style="font-size: 10px;">anti-pattern</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/java-中断/" style="font-size: 10px;">java, 中断</a> <a href="/tags/network/" style="font-size: 10px;">network</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/web后端/" style="font-size: 10px;">web后端</a> <a href="/tags/并行技术/" style="font-size: 10px;">并行技术</a> <a href="/tags/微服务/" style="font-size: 10px;">微服务</a> <a href="/tags/心路历程/" style="font-size: 15px;">心路历程</a>
 					</div>
 				</section>
 				
@@ -205,6 +205,63 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-范型-接口" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/02/13/范型-接口/" class="article-date">
+  	<time datetime="2017-02-13T15:56:10.000Z" itemprop="datePublished">2017-02-13</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/13/范型-接口/">范型--接口</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>范型接口-&gt;生成器<br>1.通过范型接口（类似工厂类的构造方法）；<br>public interface Generator<t> { T next(); }<br>2.基本类型无法作为范型的参数类型；</t></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-范型-元组" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -635,64 +692,6 @@
       
 	<div class="article-tag tagcloud">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android-ui/">android ui</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-引入并发的原因" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2013/06/14/引入并发的原因/" class="article-date">
-  	<time datetime="2013-06-14T08:49:21.000Z" itemprop="datePublished">2013-06-14</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2013/06/14/引入并发的原因/">引入并发的原因</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在这里我不想去谈论操作系统的发展史，而是想说一下操作系统发展过程中迫切引入并发的原因：</p>
-<p><strong>1.资源利用率</strong><br>在有些时候，程序在工作的时候，必须要等待外部的某个操作结束才能进行下一步，比如在等待输入和输出的时候，而程序在等待的过程之中，是无法进行任何其它的工作的。故此，如果程序在等待的同时去执行另外的一个程序，无疑会提高程序执行的效率。小学时，华罗庚的统筹方法里面也谈到了利用率的问题，给我有相同的启示。<br><strong>2.公平性</strong><br>在大多数情况下，我们要求各种不同程序应当对计算机有相同的使用权。因此，必须要一种高效的算法来解决这个问题。分时操作系统就是将计算机cpu的时间进行粗粒度的分片，然后使不同程序来进行共同分享资源。<br><strong>3.便利性</strong><br>多任务的操作系统，为多程序直接的通信和交互提供了可能。程序直接的通信，使得程序的结构变得更加灵活，以往复杂的事情也可以进行拆分，解决了以前很多实际工作中的难题。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/并行技术/">并行技术</a></li></ul>
 	</div>
 
       
