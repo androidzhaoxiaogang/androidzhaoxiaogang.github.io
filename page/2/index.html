@@ -118,7 +118,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/android/" style="font-size: 10px;">android</a> <a href="/tags/android-ui/" style="font-size: 10px;">android ui</a> <a href="/tags/anti-pattern/" style="font-size: 10px;">anti-pattern</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/java-中断/" style="font-size: 10px;">java, 中断</a> <a href="/tags/network/" style="font-size: 10px;">network</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/web后端/" style="font-size: 10px;">web后端</a> <a href="/tags/并行技术/" style="font-size: 10px;">并行技术</a> <a href="/tags/微服务/" style="font-size: 10px;">微服务</a> <a href="/tags/心路历程/" style="font-size: 20px;">心路历程</a>
+						<a href="/tags/android/" style="font-size: 10px;">android</a> <a href="/tags/android-ui/" style="font-size: 10px;">android ui</a> <a href="/tags/anti-pattern/" style="font-size: 10px;">anti-pattern</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/java-中断/" style="font-size: 10px;">java, 中断</a> <a href="/tags/network/" style="font-size: 10px;">network</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/web后端/" style="font-size: 10px;">web后端</a> <a href="/tags/并行技术/" style="font-size: 10px;">并行技术</a> <a href="/tags/微服务/" style="font-size: 10px;">微服务</a> <a href="/tags/心路历程/" style="font-size: 20px;">心路历程</a>
 					</div>
 				</section>
 				
@@ -205,6 +205,80 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-后端接口鉴权技术" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2013/01/20/后端接口鉴权技术/" class="article-date">
+  	<time datetime="2013-01-19T16:56:43.000Z" itemprop="datePublished">2013-01-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2013/01/20/后端接口鉴权技术/">后端接口鉴权技术</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>一般的构造方法这里以eoe网络接口很久前的相关约定为例：</p>
+<p><strong>接口根地址：</strong></p>
+<blockquote>
+<p> API_ROOT = <a href="http://ws.eoeandroid.com/api/v1" target="_blank" rel="external">http://ws.eoeandroid.com/api/v1</a></p>
+</blockquote>
+<p>公共测试key：<br>    api_key: 3YXNgING8f5Ugiq9J27XjQ<br>    api_secret: GNBu298hQemoO4INRkAyS5YDtKaq8ds4KTAue45iyE</p>
+<p><strong>公共参数：</strong></p>
+<p>参数名    取值    含义    备注<br>uniquely_code    字符串    该用户手机的设备号必需,可取设备唯一码<br>api_key    字符串    分配的api_key    必需<br>nonce    字符串    唯一码    必需<br>timestamp    数字    时间戳，标识访问时间 必需<br>api_sig    签名值    按照规则计算出来的签名 必需<br>alt    字符串，目前支持xml    需要返回结果的数据格式 可选，默认值: xml<br>page    数字    获取结果集的第几页结果 可选，默认值: 1<br>limit    数字    结果集每页返回几条结果 可选，默认值: 20<br>locale    字符串，格式为zh-rCN    当前用户的locale代码    可选，默认值：unknown-rUnknown</p>
+<p><strong>PS：</strong></p>
+<p>每个接口除了其各自业务逻辑需要的参数外，还需要包含如下公共参数。</p>
+<p><strong>鉴权规则：</strong></p>
+<p>计算签名值：</p>
+<blockquote>
+<p>api_sig =MD5(“api_key”+@api_key+”+”nonce”+@nonce<br>+”timestamp”+@timestamp<br>+”uniquely_code”+@uniquely_code+api_secret)</p>
+</blockquote>
+<p><strong>发送请求：</strong></p>
+<p>如上参数列表中的必需的参数，加上计算出来的api_sig通过GET方式发送。</p>
+<p>当然还有其它的一些方式，比如将入参首字母排序然后加上“secret key”做hash等等，不过总体来说一般的鉴权方式都大同小异。如果公司接口采用了上面所说方法，而且安全级别要求又特别高的话，建议用NDK实现。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web后端/">web后端</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-java中断和线程结束深入探讨" class="article article-type-post" itemscope itemprop="blogPost">
   
